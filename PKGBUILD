@@ -4,7 +4,7 @@
 # Contributor: Sebastien Bariteau <numkem@gmail.com>
 
 pkgname=atlassian-jira
-pkgver=9.13.0
+pkgver=9.6.0
 pkgrel=1
 pkgdesc="Bug tracking, issue tracking and project management software"
 url="https://www.atlassian.com/software/jira"
@@ -19,7 +19,7 @@ install='jira.install'
 source=("https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-${pkgver}.tar.gz"
         'jira.conf.d'
         'jira.service')
-sha256sums=('58a6f8de06fc5548679a6f89be1ef0fcc1dbc8956b627c64a6a7cf93985093fc'
+sha256sums=('278013f1f992155478e70cb10ca6774200f2739cb3e538896c41856df241fd9a'
             '457fd1c5bcedc81e64f71cb890b600944a5be7980716b7f49f9a8c810565dbfb'
             'd61181154183301a551b1ae85a7d42c7d60ae2c36e545d2ab8ef5cc969def717')
 
@@ -29,7 +29,7 @@ package() {
 
     # Copy License
     mkdir -p "${pkgdir}/usr/share/licenses/atlassian-jira"
-    cp "${pkgdir}/opt/atlassian-jira/licenses/com.atlassian.ip--atlassian-ip--3.1.txt" "${pkgdir}/usr/share/licenses/atlassian-jira/LICENSE"
+    cp "${pkgdir}/opt/atlassian-jira/licenses/com.atlassian.ip--atlassian-ip--3.0.txt" "${pkgdir}/usr/share/licenses/atlassian-jira/LICENSE"
 
     # remove unneeded files
     find "$pkgdir/opt/atlassian-jira/bin" -name '*.bat' -type f -exec rm "{}" \;
